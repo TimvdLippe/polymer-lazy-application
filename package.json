@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.7.7",
+    "del": "^2.0.2",
+    "gulp": "^3.8.5",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-size": "^2.0.0",
+    "gulp-useref": "^3.0.0",
+    "merge-stream": "^1.0.0",
+    "proxy-middleware": "^0.15.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.0.2",
+    "through2": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  }
+}

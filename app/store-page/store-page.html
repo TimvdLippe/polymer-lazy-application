@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+
+<dom-module id="store-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    Hey and welcome to the store!
+
+    <a href="/">Head back home.</a>
+
+    <iron-pages>
+
+    </iron-pages>
+  </template>
+  <script>
+    Polymer({
+      is: 'store-page'
+    });
+    console.log('Store was lazy-loaded and registered.');
+  </script>
+</dom-module>

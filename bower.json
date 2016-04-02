@@ -1,0 +1,17 @@
+{
+  "name": "polymer-lazy-application",
+  "authors": [
+    "Tim van der Lippe <tvanderlippe@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "iron-lazy-pages": "TimvdLippe/iron-lazy-pages",
+    "carbon-route": "PolymerElements/carbon-route#^0.8.4",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.7",
+    "iron-selector": "TimvdLippe/iron-selector#default-selected"
+  },
+  "resolutions": {
+    "iron-selector": "default-selected"
+  }
+}
