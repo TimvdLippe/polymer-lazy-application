@@ -13,6 +13,8 @@
     <carbon-location route="{{route}}"></carbon-location>
     <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{tail}}"></carbon-route>
 
+    <!-- Change the selected property to two-way binding ({{}}) to let the url update
+         when a 404 is hit -->
     <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" default-selected="404">
       <template is="iron-lazy-page" data-route="">
         Home
