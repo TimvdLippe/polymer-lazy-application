@@ -20,6 +20,7 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var proxy = require('proxy-middleware');
+var historyApiFallback = require('connect-history-api-fallback');
 
 var DIST = 'dist';
 
@@ -67,7 +68,8 @@ var serve = function(baseDir) {
     //       will present a certificate warning in the browser.
     // https: true,
     server: {
-      baseDir: baseDir
+      baseDir: baseDir,
+      middleware: [historyApiFallback()]
     }
   });
 };

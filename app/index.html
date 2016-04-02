@@ -11,7 +11,7 @@
     <carbon-location route="{{route}}" id="router"></carbon-location>
     <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}"></carbon-route>
 
-    <iron-lazy-pages selected="{{routeData.page}}" attr-for-selected="data-route" default-selected="404">
+    <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" default-selected="404">
       <template is="iron-lazy-page" data-route="">
         Home
 
