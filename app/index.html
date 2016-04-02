@@ -1,5 +1,6 @@
 <html>
 <head>
+  <!-- Specifically overwrite this value, to prevent 404 on sub-pages. -->
   <base href="/" />
   <link rel="import" href="./bower_components/carbon-route/carbon-location.html">
   <link rel="import" href="./bower_components/carbon-route/carbon-route.html">
@@ -16,10 +17,14 @@
       <template is="iron-lazy-page" data-route="">
         Home
 
-        <a href="/store">Visit the store.</a>
+        <a href="/store">Visit the store.</a><br />
+        <a href="/users">See the users.</a>
       </template>
       <template is="iron-lazy-page" data-route="store" path="store/store-page.html">
         <store-page route="{{tail}}"></store-page>
+      </template>
+      <template is="iron-lazy-page" data-route="users" path="users/user-page.html">
+        <user-page route="{{tail}}"></user-page>
       </template>
       <template is="iron-lazy-page" data-route="404">
         Oops you hit a 404.

@@ -9,7 +9,8 @@
     "iron-lazy-pages": "TimvdLippe/iron-lazy-pages",
     "carbon-route": "PolymerElements/carbon-route#^0.8.4",
     "iron-pages": "PolymerElements/iron-pages#^1.0.7",
-    "iron-selector": "TimvdLippe/iron-selector#default-selected"
+    "iron-selector": "TimvdLippe/iron-selector#default-selected",
+    "paper-input": "polymerelements/paper-input#^1.1.10"
   },
   "resolutions": {
     "iron-selector": "default-selected"

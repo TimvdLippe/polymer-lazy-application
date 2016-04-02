@@ -1,0 +1,22 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+
+<dom-module id="search-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-input value="{{params.user}}"></paper-input>
+    <span>Searching for {{params.user}}...</span>
+  </template>
+  <script>
+    Polymer({
+      is: 'search-page',
+      properties: {
+        params: Object
+      }
+    });
+  </script>
+</dom-module>

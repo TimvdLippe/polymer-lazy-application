@@ -1,0 +1,50 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/carbon-route/carbon-route.html">
+<link rel="import" href="all-users-page.html">
+<link rel="import" href="search-page.html">
+
+<dom-module id="user-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <carbon-route route="{{route}}" pattern="/:type" data="{{type}}" tail="{{tail}}" query-params="{{params}}"></carbon-route>
+
+    <span>
+      What do you want to do?
+      <a href="/">Head back home.</a>
+    </span>
+
+    <span>
+      <ul>
+        <li>
+          <a href="search">Search</a>
+        </li>
+        <li>
+          <a href="all">All users</a>
+        </li>
+      </ul>
+    </span>
+
+    <iron-pages selected="[[type.type]]" attr-for-selected="data-type">
+      <div data-type="search">
+        <search-page params="{{params}}"></search-page>
+      </div>
+      <div data-type="all">
+        <all-users-page></all-users-page>
+      </div>
+    </iron-pages>
+  </template>
+  <script>
+    Polymer({
+      is: 'user-page',
+      properties: {
+        route: Object
+      }
+    });
+    console.log('Users were lazy-loaded and registered.');
+  </script>
+</dom-module>
