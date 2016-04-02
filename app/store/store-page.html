@@ -1,6 +1,9 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/carbon-route/carbon-route.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 
 <dom-module id="store-page">
   <template>
@@ -32,6 +35,15 @@
     <iron-pages selected="[[location.location]]" attr-for-selected="data-location">
       <div data-location="amsterdam">
         The store in Amsterdam is the best!
+
+        Take a look at one of our categories:
+        <paper-dropdown-menu label="Choose a category">
+          <paper-listbox class="dropdown-content" selected="{{category.category}}" attr-for-selected="data-category">
+            <paper-item data-category="clothing">Clothing</paper-item>
+            <paper-item data-category="food">Food</paper-item>
+            <paper-item data-category="drinks">Drinks</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu>
       </div>
       <div data-location="new-york">
         The big Apple obviously needs a store.
