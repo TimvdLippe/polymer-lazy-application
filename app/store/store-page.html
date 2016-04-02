@@ -1,0 +1,50 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/carbon-route/carbon-route.html">
+
+<dom-module id="store-page">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <carbon-route route="{{route}}" pattern="/:location" data="{{location}}" tail="{{subRoute}}"></carbon-route>
+    <carbon-route route="{{subRoute}}" pattern="/:category" data="{{category}}"></carbon-route>
+
+    <span>
+      Hey and welcome to the store!
+      <a href="/">Head back home.</a>
+    </span>
+
+    <span>
+      We have some nice stores, choose one:
+      <ul>
+        <li>
+          <a href="amsterdam">Amsterdam</a>
+        </li>
+        <li>
+          <a href="new-york">New York</a>
+        </li>
+      </ul>
+    </span>
+
+    <iron-pages selected="[[location.location]]" attr-for-selected="data-location">
+      <div data-location="amsterdam">
+        The store in Amsterdam is the best!
+      </div>
+      <div data-location="new-york">
+        The big Apple obviously needs a store.
+      </div>
+    </iron-pages>
+  </template>
+  <script>
+    Polymer({
+      is: 'store-page',
+      properties: {
+        route: Object
+      }
+    });
+    console.log('Store was lazy-loaded and registered.');
+  </script>
+</dom-module>

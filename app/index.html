@@ -8,8 +8,8 @@
   <h1>Lazy application</h1>
 
   <template is="dom-bind" id="app">
-    <carbon-location route="{{route}}" id="router"></carbon-location>
-    <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}"></carbon-route>
+    <carbon-location route="{{route}}"></carbon-location>
+    <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{tail}}"></carbon-route>
 
     <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" default-selected="404">
       <template is="iron-lazy-page" data-route="">
@@ -17,8 +17,8 @@
 
         <a href="/store">Visit the store.</a>
       </template>
-      <template is="iron-lazy-page" data-route="store" path="store-page/store-page.html">
-        <store-page></store-page>
+      <template is="iron-lazy-page" data-route="store" path="store/store-page.html">
+        <store-page route="{{tail}}"></store-page>
       </template>
       <template is="iron-lazy-page" data-route="404">
         Oops you hit a 404.
