@@ -76,7 +76,7 @@ var serve = function(baseDir) {
 
 // Watch Files For Changes & Reload
 gulp.task('serve', function () {
-  serve(['.tmp', 'app']);
+  serve(['app']);
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.css'], [reload]);
