@@ -16,7 +16,7 @@
 
     <!-- Change the selected property to two-way binding ({{}}) to let the url update
          when a 404 is hit -->
-    <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" default-selected="404">
+    <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" fallback-selection="404">
       <template is="iron-lazy-page" data-route="">
         Home
 
