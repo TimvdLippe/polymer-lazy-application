@@ -6,13 +6,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "iron-lazy-pages": "TimvdLippe/iron-lazy-pages",
+    "iron-lazy-pages": "^1.2.1",
     "carbon-route": "PolymerElements/carbon-route#^0.8.4",
     "iron-pages": "PolymerElements/iron-pages#^1.0.7",
-    "iron-selector": "PolymerElements/iron-selector#^1.5.1",
+    "iron-selector": "timvdlippe/iron-selector#fallback-selection-event",
     "paper-input": "polymerelements/paper-input#^1.1.10",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.1.3",
     "paper-item": "PolymerElements/paper-item#^1.0.0",
-    "paper-listbox": "PolymerElements/paper-listbox#^1.0.0"
+    "paper-listbox": "PolymerElements/paper-listbox#^1.0.0",
+    "paper-button": "PolymerElements/paper-button#^1.0.13"
   }
 }

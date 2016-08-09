@@ -32,7 +32,10 @@
       </ul>
     </span>
 
-    <iron-pages selected="{{location.location}}" attr-for-selected="data-location" fallback-selection="not-found">
+    <iron-pages selected="[[location.location]]" attr-for-selected="data-location" fallback-selection="404">
+      <div data-location="">
+        Choose one!
+      </div>
       <div data-location="amsterdam">
         The store in Amsterdam is the best!
 
@@ -47,9 +50,6 @@
       </div>
       <div data-location="new-york">
         The big Apple obviously needs a store.
-      </div>
-      <div data-location="not-found">
-        This store could not be found.
       </div>
     </iron-pages>
   </template>

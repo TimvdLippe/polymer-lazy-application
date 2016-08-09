@@ -1,0 +1,59 @@
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
+<dom-module id="my-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+    <carbon-location route="{{route}}"></carbon-location>
+    <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{tail}}"></carbon-route>
+
+    <span hidden$="[[!triggered404]]">Oops you hit a 404! <paper-button on-tap="_resetToHome">Head back home</paper-button></span>
+
+    <!-- Change the selected property to two-way binding ({{}}) to let the url update
+         when a 404 is hit -->
+    <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" fallback-selection="404"
+        hidden$="[[triggered404]]">
+      <template is="iron-lazy-page" data-route="">
+        Home
+
+        <a href="/store/">Visit the store.</a><br />
+        <a href="/users">See the users.</a>
+      </template>
+      <template is="iron-lazy-page" data-route="store" path="store/store-page.html">
+        <store-page route="{{tail}}"></store-page>
+      </template>
+      <template is="iron-lazy-page" data-route="users" path="users/user-page.html">
+        <user-page route="{{tail}}"></user-page>
+      </template>
+    </iron-lazy-pages>
+  </template>
+  <script>
+    Polymer({
+      is: 'my-app',
+      properties: {
+        triggered404: {
+          type: Boolean,
+          value: false
+        }
+      },
+      listeners: {
+        'fallback-selection-triggered': '_handle404'
+      },
+      _handle404: function(e) {
+        if (e.detail === '404') {
+          this.triggered404 = true;
+        }
+      },
+      _resetToHome: function() {
+        this.set('routeData.page', '')
+        this.triggered404 = false;
+      }
+    });
+  </script>
+</dom-module>

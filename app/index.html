@@ -6,35 +6,11 @@
   <link rel="import" href="bower_components/carbon-route/carbon-location.html">
   <link rel="import" href="bower_components/carbon-route/carbon-route.html">
   <link rel="import" href="bower_components/iron-lazy-pages/iron-lazy-pages.html">
+  <link rel="import" href="my-app.html">
 </head>
 <body>
   <h1>Lazy application</h1>
 
-  <template is="dom-bind" id="app">
-    <carbon-location route="{{route}}"></carbon-location>
-    <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{tail}}"></carbon-route>
-
-    <!-- Change the selected property to two-way binding ({{}}) to let the url update
-         when a 404 is hit -->
-    <iron-lazy-pages selected="[[routeData.page]]" attr-for-selected="data-route" fallback-selection="404">
-      <template is="iron-lazy-page" data-route="">
-        Home
-
-        <a href="/store">Visit the store.</a><br />
-        <a href="/users">See the users.</a>
-      </template>
-      <template is="iron-lazy-page" data-route="store" path="store/store-page.html">
-        <store-page route="{{tail}}"></store-page>
-      </template>
-      <template is="iron-lazy-page" data-route="users" path="users/user-page.html">
-        <user-page route="{{tail}}"></user-page>
-      </template>
-      <template is="iron-lazy-page" data-route="404">
-        Oops you hit a 404.
-
-        <a href="/">Head back home.</a>
-      </template>
-    </iron-lazy-pages>
-  </template>
+  <my-app></my-app>
 </body>
 </html>
